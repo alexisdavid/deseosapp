@@ -30,7 +30,7 @@ export class PendientesPage {
     const alerta = this.alertCtrl.create({
 
       title: 'Nueva lista',
-      // message: "Nombre de la nueva lista",
+      message: "Nombre de la nueva lista",
       inputs: [
         {
           name: 'titulo',
@@ -42,15 +42,12 @@ export class PendientesPage {
         },{
           text: 'Guardar',
           handler: data => {
+            console.log('data :', data);
             if (data.titulo.length === 0){
                     return;
             }
-            this.navCtrl.push(AgregarPage,{
-              titulo : data.titulo
-            });
+            this.navCtrl.push( AgregarPage,{titulo : data.titulo});
 
-              
-            
           }
         }
       ]
