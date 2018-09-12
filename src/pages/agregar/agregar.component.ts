@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DeseosService } from '../../services/deseos.service';
 import { Lista,ListaItem } from '../../models';
 import { NavParams } from 'ionic-angular';
-import { ListaItem } from '../../models/lista-item.model';
+
 
 
 
@@ -19,10 +19,13 @@ export class AgregarPage {
 
   constructor( public deseosService:DeseosService,
                 private navParams:NavParams) {
-                  // console.log('this.navParams :', this.navParams);
+                 
          const titulo =this.navParams.get('titulo'); 
-          this.lista = new Lista(titulo);
-          console.log('this.lista :', this.lista);
+         this.lista = new Lista(titulo);
+
+
+         this.deseosService.agregarLista(this.lista)
+          
   }
  agregarItem(){
 
@@ -33,7 +36,7 @@ export class AgregarPage {
   const nuevoItem = new ListaItem(this.nombreItem);
 
   this.lista.items.push(nuevoItem);
-  console.log('this.lista.item :', this.lista);
+  // console.log('this.lista.item :', this.lista);
   this.nombreItem ='';
 
  }
