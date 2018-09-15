@@ -20,12 +20,6 @@ export class PendientesPage {
   }
 
 
-  listaSeleccionada(lista: Lista){
-      console.log( lista);
-
-  }
-
-
   agregarLista(){
     const alerta = this.alertCtrl.create({
 
@@ -63,6 +57,7 @@ export class PendientesPage {
    
 
   }
+  
 }
 
 
